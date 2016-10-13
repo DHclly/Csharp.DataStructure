@@ -1,5 +1,4 @@
-﻿using System;
-using Csharp.DataStructure.LinarList.Interface;
+﻿using Csharp.DataStructure.LinarList.Interface;
 
 namespace Csharp.DataStructure.LinarList
 {
@@ -20,11 +19,11 @@ namespace Csharp.DataStructure.LinarList
         /// <summary>
         /// 顺序表实际长度
         /// </summary>
-        public int Length { get; }
+        public int Length { get; private set; }
         /// <summary>
         /// 使默认构造函数私有，即禁用
         /// </summary>
-        private SequenceList(){}
+        private SequenceList() { }
         public SequenceList(int maxsize)
         {
             MaxSize = maxsize;
@@ -43,13 +42,29 @@ namespace Csharp.DataStructure.LinarList
         #region Implementation of ILinarList<T>
 
         /// <summary>
-        /// 插入节点
+        /// 插入节点(最小为1)
         /// </summary>
         /// <param name="node"></param>
         /// <param name="position"></param>
-        public bool InsertNode(T node, int position)
+        public void InsertNode(T node, int position)
         {
-            throw new NotImplementedException();
+            if (position == 1 && Length == 0)
+            {
+                Data[position - 1] = node;
+            }
+            else if (position - 1 == Length)
+            {
+                Data[Length] = node;
+            }
+            else
+            {
+                for (int i = Length - 1; i >= position - 1; i--)
+                {
+                    Data[i + 1] = Data[i];
+                }
+                Data[position - 1] = node;
+            }
+            Length++;
         }
 
         /// <summary>
@@ -57,18 +72,22 @@ namespace Csharp.DataStructure.LinarList
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
-        public bool InsertNode(T node)
+        public void InsertNode(T node)
         {
-            throw new NotImplementedException();
+            InsertNode(node,Length);
         }
 
         /// <summary>
         /// 删除节点
         /// </summary>
         /// <param name="position"></param>
-        public bool DeleteNode(int position)
+        public void DeleteNode(int position)
         {
-            throw new NotImplementedException();
+            for (int i = position; i < Length; i++)
+            {
+                Data[i-1] = Data[i];
+            }
+            Length--;
         }
 
         /// <summary>
@@ -78,7 +97,7 @@ namespace Csharp.DataStructure.LinarList
         /// <returns></returns>
         public T SearchNode(int position)
         {
-            throw new NotImplementedException();
+            return Data[position - 1];
         }
 
         /// <summary>
@@ -88,7 +107,14 @@ namespace Csharp.DataStructure.LinarList
         /// <returns></returns>
         public T SearchNode(T node)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < Length; i++)
+            {
+                if (Data[i].ToString().Equals(node.ToString()))
+                {
+                    return Data[i];
+                }
+            }
+            return default(T);
         }
 
         /// <summary>
@@ -97,7 +123,7 @@ namespace Csharp.DataStructure.LinarList
         /// <returns></returns>
         public int GetLength()
         {
-            throw new NotImplementedException();
+            return Length;
         }
 
         /// <summary>
@@ -105,7 +131,7 @@ namespace Csharp.DataStructure.LinarList
         /// </summary>
         public void Clear()
         {
-            throw new NotImplementedException();
+            Length = 0;
         }
 
         /// <summary>
@@ -114,9 +140,16 @@ namespace Csharp.DataStructure.LinarList
         /// <returns></returns>
         public bool IsEmpty()
         {
-            throw new NotImplementedException();
+            return Length == 0;
         }
-
+        /// <summary>
+        /// 判断是否为满
+        /// </summary>
+        /// <returns></returns>
+        public bool IsFull()
+        {
+            return Length == MaxSize;
+        }
         #endregion
     }
 }

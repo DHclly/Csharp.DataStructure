@@ -11,18 +11,18 @@
         /// </summary>
         /// <param name="node"></param>
         /// <param name="position"></param>
-        bool InsertNode(T node, int position);
+        void InsertNode(T node, int position);
         /// <summary>
         /// 在末尾插入节点
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
-        bool InsertNode(T node);
+        void InsertNode(T node);
         /// <summary>
         /// 删除节点
         /// </summary>
         /// <param name="position"></param>
-        bool DeleteNode(int position);
+        void DeleteNode(int position);
         /// <summary>
         /// 通过位置搜索节点
         /// </summary>

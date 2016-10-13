@@ -8,70 +8,37 @@ namespace LinarList
 {
     class DoubleLinkedList<T> : ILinarList<T>
     {
-        private class DbNode<T>
+        private class DbNode<U>
         {
-            public T Data { get; set; }
-            public DbNode<T> Previous { get; set; }
-            public DbNode<T> Next { get; set; }
+            public U Data { get; set; }
+            public DbNode<U> Previous { get; set; }
+            public DbNode<U> Next { get; set; }
 
-            public DbNode(T data, DbNode<T> next) : this()
+            public DbNode(U data, DbNode<U> next) : this()
             {
                 this.Data = data;
                 this.Next = next;
             }
 
-            public DbNode(T data):this()
+            public DbNode(U data):this()
             {
                 this.Data = data;
                 this.Next = null;
             }
 
-            public DbNode(DbNode<T> next ):this()
+            public DbNode(DbNode<U> next ):this()
             {
-                this.Data = default(T);
+                this.Data = default(U);
                 this.Next = next;
             }
 
             public DbNode()
             {
-                this.Data = default(T);
+                this.Data = default(U);
                 this.Next = null;
                 this.Previous = null;
             }
         }
-        public void InsertNode(T node, int position)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteNode(int position)
-        {
-            throw new NotImplementedException();
-        }
-
-        public T SearchNode(int position)
-        {
-            throw new NotImplementedException();
-        }
-
-        public T SearchNode(T node)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetLength()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Clear()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool IsEmpty()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
