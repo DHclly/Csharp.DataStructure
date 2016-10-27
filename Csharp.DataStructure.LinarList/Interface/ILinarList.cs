@@ -4,7 +4,7 @@
     /// 线性表接口
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    interface ILinarList<T>
+    public interface ILinarList<T>
     {
         /// <summary>
         /// 插入节点

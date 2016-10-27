@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp.DataStructure.LinarL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp.DataStructure.Test", "Csharp.DataStructure.Test\Csharp.DataStructure.Test.csproj", "{FCFB4208-1D43-492E-86B1-23AF87A3CF21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp.DataStructure.LinarList.StudentScore", "Csharp.DataStructure.LinarList.StudentScore\Csharp.DataStructure.LinarList.StudentScore.csproj", "{A1FAD0EB-815C-43E7-A65E-98691B08F351}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FCFB4208-1D43-492E-86B1-23AF87A3CF21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCFB4208-1D43-492E-86B1-23AF87A3CF21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCFB4208-1D43-492E-86B1-23AF87A3CF21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1FAD0EB-815C-43E7-A65E-98691B08F351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FAD0EB-815C-43E7-A65E-98691B08F351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FAD0EB-815C-43E7-A65E-98691B08F351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FAD0EB-815C-43E7-A65E-98691B08F351}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

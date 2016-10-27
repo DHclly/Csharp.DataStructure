@@ -2,7 +2,7 @@
 
 namespace Csharp.DataStructure.LinarList
 {
-    class CircleLinkedList<T>:ILinarList<T>
+    public class CircleLinkedList<T>:ILinarList<T>
     {
         #region Implementation of ILinarList<T>
 
