@@ -74,7 +74,7 @@ namespace Csharp.DataStructure.LinarList
         /// <returns></returns>
         public void InsertNode(T node)
         {
-            InsertNode(node,Length);
+            InsertNode(node,Length+1);
         }
 
         /// <summary>
